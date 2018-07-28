@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://gtri.gatech.edu"?>
+<params>
+  <library>NavigationFunction_plugin</library>
+  <speed>20.0</speed>
+  <rp>20</rp>
+  <k>0.2</k>
+  <Kp>20</Kp>
+  <Ks>0.08</Ks>
+  <delta_j>5</delta_j>
+  <delta_c>5</delta_c>
+  <rho_j>0</rho_j>
+  <rho_c>2000</rho_c>
+  <K>0.6</K>
+  <theta_cutoff>67.5</theta_cutoff>
+  <rss>400</rss>  <!-- basically infinite sensing range -->
+  <add_swirling>true</add_swirling>
+</params>

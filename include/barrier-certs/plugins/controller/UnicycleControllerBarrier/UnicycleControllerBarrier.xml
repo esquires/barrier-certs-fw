@@ -1,0 +1,19 @@
+<params>
+  <library>UnicycleControllerBarrier_plugin</library>
+
+  <Ds>0.5</Ds>
+  <turn_rate_max>1</turn_rate_max>
+  <vel_max>1</vel_max>
+  <vel_min>0.1</vel_min>
+  <calc_type>turn</calc_type>
+  <log_delay>0.1</log_delay>
+  <draw_traj>false</draw_traj>
+  <centralized>false</centralized>
+  <sensing_range>-1</sensing_range>
+  <pct_offset>0.00</pct_offset>
+  <straight_pct_offset>0.00</straight_pct_offset>
+  <d>0.1</d>
+  <beta>0.5</beta>
+  <draw_dist>true</draw_dist>
+  <delta>0.01</delta>
+</params>

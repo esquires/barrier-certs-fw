@@ -1,0 +1,220 @@
+<runscript name="Boids Model with Airplanes">
+  <run dt="0.005" enable_gui="true" end="120.0" network_gui="false" start="0.0" start_paused="true" time_warp="0" />
+  <end_condition>time</end_condition>
+  <background_color>191 191 191</background_color>
+  <gui_update_period>10</gui_update_period>
+  <plot_tracks>false</plot_tracks>
+  <output_type weights_file="unity">all</output_type>
+  <show_plugins>false</show_plugins>
+  <latitude_origin>35.721025</latitude_origin>
+  <longitude_origin>-120.767925</longitude_origin>
+  <altitude_origin>300</altitude_origin>
+  <show_origin>false</show_origin>
+  <grid_spacing>250</grid_spacing>
+  <grid_size>4000</grid_size>
+  <log_dir>~/.scrimmage/logs</log_dir>
+  <multi_threaded controller="true" num_threads="8">false</multi_threaded>
+  <enable_screenshots min_period="1.0">false</enable_screenshots>
+  <entity_interaction collision_range="-1" order="0" startup_collision_range="-1">SimpleCollision</entity_interaction>
+  <metrics param_common="params">BarrierCertMetrics</metrics>
+  <entity_interaction param_common="params">BarrierCertCentralized</entity_interaction>
+  <seed>1</seed>
+  <camera focal_point="0,0,0" follow_id="4" mode="free" pos="0,0.01,250.5" show_fps="false" />
+  <param_common name="params">
+    <Ds>5.0</Ds>
+    <turn_rate_max>13</turn_rate_max>
+    <vel_max>25</vel_max>
+    <vel_min>15</vel_min>
+    <velocity_z_max>3.9</velocity_z_max>
+    <calc_type>turn</calc_type>
+    <heading_angle>0.0</heading_angle>
+    <offset_angle>0.0</offset_angle>
+    <log_delay>0.001</log_delay>
+    <centralized>false</centralized>
+    <sensing_range>350.0</sensing_range>
+    <pct_offset>0.1</pct_offset>
+    <draw_h>false</draw_h>
+    <draw_paths>false</draw_paths>
+    <straight_pct_offset>0.01</straight_pct_offset>
+    <beta>0.5</beta>
+    <d>0.001</d>
+    <sigma>1</sigma>
+    <enable_robustness>false</enable_robustness>
+    <draw_dist>false</draw_dist>
+    <draw_sensor_range>true</draw_sensor_range>
+    <delta>0.01</delta>
+    <alpha_coef>0.1</alpha_coef>
+    <is_3d>True</is_3d>
+    <enable_roll>true</enable_roll>
+    <time_delay_eta>20</time_delay_eta>
+    <clamp_actuators>False</clamp_actuators>
+    </param_common>
+  <entity_common name="fixed_wing">
+    <team_id>1</team_id>
+    <color>255 0 0</color>
+    <count>1</count>
+    <health>1</health>
+    <controller param_common="params">UnicycleControllerPoint</controller>
+    <controller param_common="params">UnicycleControllerBarrier</controller>
+    <motion_model param_common="params">Unicycle</motion_model>
+    <script_name>rascal_piedmont_dalt.xml</script_name>
+    <visual_model visual_scale="0.002308892">zephyr-blue</visual_model>
+    <visual_scale>1</visual_scale>
+    <variance_x>0</variance_x>
+    <variance_y>0</variance_y>
+    <visual_rotate>90 0 0 1</visual_rotate>
+    </entity_common>
+  <entity_common name="single_integrator">
+    <team_id>1</team_id>
+    <color>255 0 0</color>
+    <count>1</count>
+    <health>1</health>
+    <controller param_common="params">SingleIntegratorControllerWaypoint</controller>
+    <controller param_common="params">SingleIntegratorControllerBarrier</controller>
+    <motion_model>SingleIntegrator</motion_model>
+    <visual_model visual_scale="0.25">Sphere</visual_model>
+    <visual_scale>50.01</visual_scale>
+    <variance_x>0</variance_x>
+    <variance_y>0</variance_y>
+    </entity_common>
+  <entity entity_common="fixed_wing">
+    <x>-1500.00</x>
+    <y>0.00</y>
+    <z>0.00</z>
+    <heading>0.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="1500.0,-1.83697019872e-13,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-1426.58</x>
+    <y>-463.53</y>
+    <z>0.00</z>
+    <heading>18.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="1426.58477444,463.525491562,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-1213.53</x>
+    <y>-881.68</y>
+    <z>0.00</z>
+    <heading>36.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="1213.52549156,881.677878439,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-881.68</x>
+    <y>-1213.53</y>
+    <z>0.00</z>
+    <heading>54.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="881.677878439,1213.52549156,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-463.53</x>
+    <y>-1426.58</y>
+    <z>0.00</z>
+    <heading>72.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="463.525491562,1426.58477444,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-0.00</x>
+    <y>-1500.00</y>
+    <z>0.00</z>
+    <heading>90.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="2.75545529808e-13,1500.0,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>463.53</x>
+    <y>-1426.58</y>
+    <z>0.00</z>
+    <heading>108.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-463.525491562,1426.58477444,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>881.68</x>
+    <y>-1213.53</y>
+    <z>0.00</z>
+    <heading>126.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-881.677878439,1213.52549156,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>1213.53</x>
+    <y>-881.68</y>
+    <z>0.00</z>
+    <heading>144.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-1213.52549156,881.677878439,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>1426.58</x>
+    <y>-463.53</y>
+    <z>0.00</z>
+    <heading>162.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-1426.58477444,463.525491562,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>1500.00</x>
+    <y>-0.00</y>
+    <z>0.00</z>
+    <heading>180.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-1500.0,3.67394039744e-13,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>1426.58</x>
+    <y>463.53</y>
+    <z>0.00</z>
+    <heading>198.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-1426.58477444,-463.525491562,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>1213.53</x>
+    <y>881.68</y>
+    <z>0.00</z>
+    <heading>216.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-1213.52549156,-881.677878439,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>881.68</x>
+    <y>1213.53</y>
+    <z>0.00</z>
+    <heading>234.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-881.677878439,-1213.52549156,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>463.53</x>
+    <y>1426.58</y>
+    <z>0.00</z>
+    <heading>252.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-463.525491562,-1426.58477444,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>0.00</x>
+    <y>1500.00</y>
+    <z>0.00</z>
+    <heading>270.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="-4.5924254968e-13,-1500.0,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-463.53</x>
+    <y>1426.58</y>
+    <z>0.00</z>
+    <heading>288.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="463.525491562,-1426.58477444,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-881.68</x>
+    <y>1213.53</y>
+    <z>0.00</z>
+    <heading>306.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="881.677878439,-1213.52549156,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-1213.53</x>
+    <y>881.68</y>
+    <z>0.00</z>
+    <heading>324.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="1213.52549156,-881.677878439,0">Wpt</autonomy>
+    </entity>
+  <entity entity_common="fixed_wing">
+    <x>-1426.58</x>
+    <y>463.53</y>
+    <z>0.00</z>
+    <heading>342.00</heading>
+    <autonomy draw_wpt="false" exit_on_reaching_wpt="false" gain="1" wpt="1426.58477444,-463.525491562,0">Wpt</autonomy>
+    </entity>
+  </runscript>

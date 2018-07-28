@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://gtri.gatech.edu"?>
+<params>
+  <library>Wpt_plugin</library>
+  <initial_speed>24.3</initial_speed>
+  <wpt>-10, 0</wpt>
+  <stop_thresh>1</stop_thresh>
+  <exit_on_reaching_wpt>true</exit_on_reaching_wpt>
+  <draw_wpt>false</draw_wpt>
+  <wpt_size>10</wpt_size>
+</params>

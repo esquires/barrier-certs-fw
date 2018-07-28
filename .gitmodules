@@ -1,0 +1,3 @@
+[submodule "submodules/scrimmage"]
+	path = submodules/scrimmage
+	url = https://github.com/gtri/scrimmage
